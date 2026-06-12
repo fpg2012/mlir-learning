@@ -1,0 +1,18 @@
+# lit.site.cfg.py.in — CMake 模板文件
+# CMake 会把这个文件里的 @VAR@ 替换成实际路径，生成 lit.site.cfg.py
+# lit 启动时先读 lit.site.cfg.py，拿到路径变量，再去加载 lit.cfg.py
+
+# ---- 项目路径 ----
+config.project_source_dir = "@PROJECT_SOURCE_DIR@"
+config.project_binary_dir = "@PROJECT_BINARY_DIR@"
+
+# ---- LLVM/MLIR 工具路径 ----
+# 指向你编译好的 llvm-project build 目录下的 bin
+config.llvm_tools_dir = "/workspace/dn/llvm-project/build/bin"
+
+# LLVM lit 基础配置（初始化 llvm_config 对象）
+import lit.llvm
+lit.llvm.initialize(lit_config, config)
+
+# 加载你的主配置
+lit_config.load_config(config, "@PROJECT_SOURCE_DIR@/tests/lit.cfg.py")
