@@ -1,4 +1,5 @@
 #include "lib/Transform/Affine/AffineFullUnroll.h"
+#include "lib/Transform/Affine/AffineFullUnroll2.h"
 #include "mlir/include/mlir/InitAllDialects.h"
 #include "mlir/include/mlir/Pass/PassManager.h"
 #include "mlir/include/mlir/Pass/PassRegistry.h"
@@ -9,6 +10,7 @@ int main(int argc, char **argv) {
     mlir::registerAllDialects(registry);
 
     mlir::PassRegistration<mlir::my_opt::AffineFullUnrollPass>();
+    mlir::PassRegistration<mlir::my_opt::AffineFullUnrollPass2>();
 
     return mlir::asMainReturnCode(
         mlir::MlirOptMain(argc, argv, "Tutorial Pass Driver", registry)
