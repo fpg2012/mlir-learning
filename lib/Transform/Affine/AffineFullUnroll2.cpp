@@ -1,7 +1,7 @@
 #include "lib/Transform/Affine/AffineFullUnroll2.h"
 #include "lib/Transform/Affine/AffineFullUnrollPattern.h"
-#include "mlir/Dialect/Affine/IR/AffineOps.h"
-#include "mlir/Dialect/Affine/LoopUtils.h"
+#include "lib/Transform/Affine/AffineFullUnrollPattern.h"
+#include "mlir/Transforms/GreedyPatternRewriteDriver.h"
 
 namespace mlir {
 namespace my_opt {

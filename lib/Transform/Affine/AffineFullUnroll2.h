@@ -1,9 +1,7 @@
 #pragma once
 
-#include "lib/Transform/Affine/AffineFullUnrollPattern.h"
 #include "mlir/Dialect/Func/IR/FuncOps.h"
 #include "mlir/Pass/Pass.h"
-#include "mlir/Transforms/GreedyPatternRewriteDriver.h"
 
 namespace mlir {
 namespace my_opt {

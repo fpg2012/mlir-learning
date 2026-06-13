@@ -1,6 +1,5 @@
 #pragma once
 
-#include "mlir/Pass/Pass.h"
 #include "mlir/Dialect/Affine/LoopUtils.h"
 #include "mlir/Dialect/Affine/IR/AffineOps.h"
 
