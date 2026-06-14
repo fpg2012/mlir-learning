@@ -4,6 +4,7 @@ get_property(conversion_libs GLOBAL PROPERTY MLIR_CONVERSION_LIBS)
 set(LIBS
     AffineFullUnroll
     MulToAdd
+    PolyDialect
     MLIRRegisterAllDialects
     MLIRMlirOptMain
     ${dialect_libs}
