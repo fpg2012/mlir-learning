@@ -85,5 +85,21 @@ llvm::LogicalResult PeelFromMulPattern::matchAndRewrite(arith::MulIOp op, Patter
     return llvm::success();
 }
 
+#define GEN_PASS_DEF_MULTOADDTG
+#include "lib/Transform/Arith/MulToAddTG.h.inc"
+
+class MulToAddTGPass : public impl::MulToAddTGBase<MulToAddTGPass> {
+public:
+    void runOnOperation() override;
+};
+
+void MulToAddTGPass::runOnOperation() {
+    mlir::RewritePatternSet patterns(&getContext());
+    patterns.add<PeelFromMulPattern>(&getContext());
+    patterns.add<PowerOfTwoExpandPattern>(&getContext());
+
+    (void)applyPatternsGreedily(getOperation(), std::move(patterns));
+}
+
 }
 }

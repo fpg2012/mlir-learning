@@ -35,5 +35,10 @@ class MulToAddPass : public PassWrapper<MulToAddPass, OperationPass<mlir::func::
     }
 };
 
+// generated from tablegen - declarations and inline registrations only
+#define GEN_PASS_DECL
+#define GEN_PASS_REGISTRATION
+#include "lib/Transform/Arith/MulToAddTG.h.inc"
+
 }
 }

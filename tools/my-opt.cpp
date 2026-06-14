@@ -12,6 +12,7 @@ int main(int argc, char **argv) {
     mlir::PassRegistration<mlir::my_opt::AffineFullUnrollPass>();
     mlir::PassRegistration<mlir::my_opt::AffineFullUnrollPass2>();
     mlir::PassRegistration<mlir::my_opt::MulToAddPass>();
+    mlir::my_opt::registerMulToAddTGPass();
 
     return mlir::asMainReturnCode(
         mlir::MlirOptMain(argc, argv, "Tutorial Pass Driver", registry)
