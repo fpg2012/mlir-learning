@@ -1,3 +1,5 @@
+#ifndef LIB_DIALECT_POLY_POLYTYPES_TD_
+#define LIB_DIALECT_POLY_POLYTYPES_TD_
 include "PolyDialect.td"
 include "mlir/IR/AttrTypeBase.td"
 
@@ -18,3 +20,5 @@ def Polynomial : Poly_Type</* name */"Polynomial", /* typeMnemonic */"poly"> {
     let parameters = (ins "int":$degreeBound);
     let assemblyFormat = "`<` $degreeBound `>`";
 }
+
+#endif // LIB_DIALECT_POLY_POLYTYPES_TD_
