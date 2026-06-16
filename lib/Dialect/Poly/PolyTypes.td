@@ -2,6 +2,7 @@
 #define LIB_DIALECT_POLY_POLYTYPES_TD_
 include "PolyDialect.td"
 include "mlir/IR/AttrTypeBase.td"
+include "mlir/IR/BuiltinTypeInterfaces.td"
 
 // class用于定义抽象类（不产生C++代码）
 class Poly_Type<string name, string typeMnemonic> : TypeDef<Poly_Dialect, name> {
